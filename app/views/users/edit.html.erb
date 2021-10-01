@@ -1,0 +1,21 @@
+<div class="">
+
+
+<%= form_with model: @user do |form| %>
+
+  <%= form.label :username, 'Username' %>
+  <%= form.text_field :username %>
+  <% @user.errors.full_messages_for(:username).each do |message| %>
+  <div><%= message %></div>
+  <% end %>
+
+  <%= form.label :email, 'Email' %>
+  <%= form.email_field :email, placeholder: 'bruno@gmail.com' %>
+
+  <%= form.label :password, 'Password' %>
+  <%= form.password_field :password %>
+
+  <%= form.submit "Submit" %>
+
+<% end %>
+</div>
